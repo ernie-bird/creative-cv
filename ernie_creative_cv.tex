@@ -1,0 +1,661 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) 
+%     http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> 
+%     http://www.nathanieljohnston.com
+%
+% This work is licensed under the Creative Commons Attribution-Noncommercial-Share 
+% Alike 2.5 License. To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative 
+% Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage[backend=bibtex]{biblatex}
+\usepackage{hyperref}
+\usepackage[version=3]{mhchem}
+
+%-----------------------------------------------------------
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=red            % color of external links
+}
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+% Width of border outside of title bars
+\setlength{\outerbordwidth}{3pt}  
+% Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolor}{gray}{0.75}  
+% Inner background color of title bars
+\definecolor{shadecolorB}{gray}{0.93}  
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\fboxsep}{\outerbordwidth}
+    \begin{shaded}
+    \setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+
+\newcommand{\ressubheadingshort}[3]{
+    \begin{center}
+    \begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+        \multicolumn{2}{c}{\textbf{#1} \cftdotfill{\cftdotsep} #2} \\
+        \textit{#3} & \\
+        \vphantom{E}
+    \end{tabular*}
+    \end{center}
+    \vspace{-24pt}
+}
+
+\newcommand{\ressubheading}[4]{
+    \begin{center}
+    \begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+        \multicolumn{2}{c}{\textbf{#1} \cftdotfill{\cftdotsep} #2} \\
+        \multicolumn{2}{c}{\textit{#3} \cftdotfill{\cftdotsep} \textit{#4}} \\
+        \vphantom{E}
+    \end{tabular*}
+    \end{center}
+    \vspace{-24pt}
+}
+
+\newcommand{\ressubheadingitems}[5]{
+    \begin{center}
+    \begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+        \multicolumn{2}{c}{\textbf{#1} \cftdotfill{\cftdotsep} #2} \\
+        \multicolumn{2}{c}{\textit{#3} \cftdotfill{\cftdotsep} \textit{#4}} \\
+        \vphantom{E}
+    \end{tabular*}
+    \end{center}
+    \vspace{-32pt}
+    \begin{itemize}\renewcommand{\labelitemi}{}
+        \item\begin{itemize}
+        #5
+        \end{itemize}
+    \end{itemize}
+}
+
+
+\newcommand{\resshortsubheadingitems}[3]{
+    \begin{center}
+    \begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+	    \multicolumn{2}{c}{\textbf{#1} \cftdotfill{\cftdotsep}\textit{#2}}
+        \\
+        \vphantom{E}
+    \end{tabular*}
+    \end{center}
+    \vspace{-32pt}
+\begin{itemize}\renewcommand{\labelitemi}{}
+        \item\begin{itemize}
+        #3
+        \end{itemize}
+    \end{itemize}
+
+}
+
+
+
+%-----------------------------------------------------------
+
+
+% Bibliography
+\bibliography{publications}{}
+%\bibliographystyle{plain}
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Ernie Bird (Ernest Oleksiiovych Deriabin)} & \textbf{\today} \\
+Portfolio: \url{https://imerniebird.com/} & ernest.deriabin@gmail.com \\
+\end{tabular*}
+\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education and Academic Employment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ressubheadingitems{Columbia University}{New York, NY}{Guest Lecturer}
+{Sep 2021 - Dec 2023}{
+	\resitem{Invited Composer for School of the Arts, M.F.A Playwriting}
+	\resitem{Provided original music and feedback for Deborah Brevoort's Lyric Writing students}
+}
+
+\ressubheadingitems{BMI Lehman Engel Musical Theatre Workshop}{New York, NY}{Composer/Lyricist}
+{2022-Present}{
+	\resitem{Moderators: Patrick Cook, Frederick Freyer, Maury Yeston}
+	\resitem{Invited to the lifelong Advanced Workshop}
+}
+
+\resshortsubheadingitems{Private Lessons and Mentorship}
+    {2021-Present}{
+    \resitem{Adam Guettel, Craig Carnelia, Stephen Bray}
+}
+
+\ressubheadingitems{The American Opera Project/New York University}{New York, NY}{Post-M.F.A Composer}
+{Dec 2023 - May 2024}{
+	\resitem{AOP-NYU/Tisch Opera Lab co-directed by Randall Eng and Sam Helfrich}
+	\resitem{Short Operas Commissioned by NYU, AOP and the Hudson Guild}
+}
+
+\ressubheadingitems{New York University}{New York, NY}
+{M.F.A Musical Theatre Writing and  Composition}
+    {2018 - 2020}{
+	    \resitem{The only composer in class to write a second thesis}
+    \resitem{Advisers: Rachel Sheinkin, Mel Marvin, Fred Carl}
+    \resitem{Thesis I: \textit{Return to Grace}, a full-length musical;
+Thesis II: \textit{Soroka}, a full-length musical}
+    \resitem{Instruction: Randall Eng, Steven Lutvak, Michael John LaChiusa,
+ William Finn, Sarah Schlessinger, Mindi Dickstein, Deborah Brevoort, Kirsten Childs} 
+}
+
+\ressubheadingitems{Berklee College of Music}{Boston, MA}
+    {Mus.B Management and Audio Engineering; Musical Theatre Writing minor}{2012 - 2017}{
+	    \resitem{Capstone Engineering Project: {\it Optimizing Audio Recording, Production, and Editing for Minimally Rehearsed Theatre Orchestras in Rapid-Turnaround Environments}}
+	    \resitem{Adviser: Dr. Susan Rogers}
+	    \resitem{Directed Study in Theatre Writing: {\it Dotted Line}, a new musical based on Ukraine's history}
+} 
+
+\ressubheadingitems{Reinhold Glière Institute of Music}{Kyiv, Ukraine}
+    {Pre-College}{2007 - 2012}{
+	    \resitem{Music Theory, Ear Training, Contemporary Voice}
+}
+    
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Awards, Grants, Honours and Residencies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \vspace{-2pt}
+\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
+
+\multicolumn{2}{c}{Johnny Mercer Foundation Songwriters Project Residency\cftdotfill{\cftdotsep} 2024}\\
+\multicolumn{2}{c}{Jonathan Larson Grant Finalist (The American Theatre Wing) \cftdotfill{\cftdotsep} 2023}\\
+\multicolumn{2}{c}{EB1-A Extraordinary Ability "Einstein" Green Card (USCIS)\cftdotfill{\cftdotsep} 2022}\\
+\multicolumn{2}{c}{Tisch Departmental Fellow (New York University)\cftdotfill{\cftdotsep} 2018-2020}\\
+\multicolumn{2}{c}{Full Competitive Scholarship (New York University)}{\cftdotfill{\cftdotsep} 2018-2020}\\
+\multicolumn{2}{c}{SOUND BITES Short Musical Festival Finalist – Kaufman Music Center}{\cftdotfill{\cftdotsep} 2020 (2022)}\\
+\multicolumn{2}{c}{Academic Achievement Grant — every semester (Berklee College of Music)}{\cftdotfill{\cftdotsep} 2012-2017}\\
+\multicolumn{2}{c}{Merit Scholarship (Berklee College of Music)}{\cftdotfill{\cftdotsep} 2012-2017}\\
+\multicolumn{2}{c}{Curtain Up Musical Theatre Songwriting Competition Winner (Berklee) }{\cftdotfill{\cftdotsep} 2017 \&  2021}\\
+\multicolumn{2}{c}{Honorary title: Merited Artist of Ukraine (Ukrainian Variety Artists Association)}{\cftdotfill{\cftdotsep} 2017}\\
+\multicolumn{2}{c}{Audio Engineering Society Student Recording Competition – Berklee Nomination}{\cftdotfill{\cftdotsep} 2016}\\
+\multicolumn{2}{c}{International Folk Festival Finalist (Berklee Performance Center)}{\cftdotfill{\cftdotsep} 2015}\\
+\multicolumn{2}{c}{Junior Eurovision National Selection Finalist \& Top-5  Songwriter (1st TV Channel Ukraine)}{\cftdotfill{\cftdotsep} 2013}\\
+%\multicolumn{2}{c}{YouTube Hack Day Winner (Berklee College of Music)}{\cftdotfill{\cftdotsep} 2013}\\
+\multicolumn{2}{c}{International Songwriting Competition Semi-Finalist (Nashville, TN)}{\cftdotfill{\cftdotsep} 2013, 2014 \& 2017}\\
+\multicolumn{2}{c}{International Songwriting Competition Winner (Nashville, TN)}{\cftdotfill{\cftdotsep} 2012}\\
+%\multicolumn{2}{c}{Unsigned Only International Songwriting Competition Semi-Finalist}{\cftdotfill{\cftdotsep} 2012}\\
+\multicolumn{2}{c}{Eurovision Song Contest, National Selection Semi-Finalist (1st TV Channel Ukraine)}{\cftdotfill{\cftdotsep} 2012}\\
+\multicolumn{2}{c}{Metropolitan of the Orthodox Church of Ukraine Honours for Contribution to Culture}{\cftdotfill{\cftdotsep} 2010}\\
+\multicolumn{2}{c}{Performed for President Viktor Yushchenko of Ukraine at the "Step to the Stars" Gala}{\cftdotfill{\cftdotsep} 2008}\\
+\multicolumn{2}{c}{Junior Eurovision Song Contest, National Selection Finalist (1st TV Channel Ukraine)}{\cftdotfill{\cftdotsep} 2007 \& 2008}\\
+%\multicolumn{2}{c}{Slavianski Bazaar Int. Competition 2nd Place (1st Ukraine/1st Russia/1st Belarus TV Channels)}{\cftdotfill{\cftdotsep} 2007}\\
+%\multicolumn{2}{c}{"Stars, to the Stage!" First Prize (National TV Company of Ukraine)}{\cftdotfill{\cftdotsep} 2006}\\
+%\multicolumn{2}{c}{"Step to The Stars Finalist" (1st Channel Ukraine)}{\cftdotfill{\cftdotsep} 2005}\\
+%\multicolumn{2}{c}{"Want to Be a Star" Reality TV Show Finalist (1+1 TV Channel, Ukraine)}{\cftdotfill{\cftdotsep} 2005}\\
+%\multicolumn{2}{c}{...}{\cftdotfill{\cftdotsep} 20..}\\
+%\multicolumn{2}{c}{...}{\cftdotfill{\cftdotsep} 20..}\\
+%\multicolumn{2}{c}{...}{\cftdotfill{\cftdotsep} 20..}\\
+%\multicolumn{2}{c}{...}{\cftdotfill{\cftdotsep} 20..}\\
+%\multicolumn{2}{c}{...}{\cftdotfill{\cftdotsep} 20..}\\
+%\multicolumn{2}{c}{...}{\cftdotfill{\cftdotsep} 20..}\\
+%\multicolumn{2}{c}{...}{\cftdotfill{\cftdotsep} 20..}\\
+
+
+
+    \vphantom{E}
+\end{tabular*}
+\end{center}\vspace*{-16pt}
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{Featured Publications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{enumerate}
+%\item \fullcite{wright2017}
+% 
+%\item \fullcite{Zhu2013}
+% 
+% \item \fullcite{Scopatz2013a}
+% 
+% \item \fullcite{scopatz2013flash}
+% 
+% \item \fullcite{Scopatz2009}
+% 
+%\end{enumerate}
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{Research Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\ressubheadingitems{IGERT Fellow}{The University of South Carolina, Columbia}
+%    {Atomic Pair Distribution Function Analysis}{August 2014 - June 2016} {
+%        \resitem{Development of Monte Carlo simulations of atomic structures using x-ray scattering}
+%        \resitem{Refinement of Solid Oxide Fuel Cell structural dynamics}
+%    }
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Select Works}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ressubheadingitems{The Foreign States of America}{Composer, Lyricist, Bookwriter}
+    {Full-length musical}
+    {2019 - Present} {
+    \resitem{Started as a song cycle at New York University}
+    \resitem{Excerpt(Johnny Mercer Songwriters Project): \url{https://www.youtube.com/watch?v=vOiyRFaIHCs}}
+    }
+
+\ressubheadingitems{The Ukrainian War Diary}{Composer, Lyricist, Bookwriter}
+    {One-act music experience}
+    {2019 - Present} {
+    \resitem{Reading with orchestra at the National Opera Center, February 24, 2023}
+    \resitem{Link: \url{https://youtu.be/zyVza0YtQOA?si=JctZ1x__g9d59Fwl&t=1}}
+    }
+
+
+
+\ressubheadingitems{Sunday Brunch}{Composer, Bookwriter}
+    {Full-length musical}
+    {2022 - Present} {
+    \resitem{Performed at 54 Below and Green Room 42}
+    \resitem{Excerpt: \url{https://on.soundcloud.com/GJ9PJt4p7UD7Zq6Q7}}
+    }
+
+    \ressubheadingitems{Muckrakers}{Composer}{One-act opera}{2024}{
+	    \resitem{Performed at the NYU Shubert Theatre and the Hudson Guild Theatre}
+	    \resitem{Comissioned by New York University and the American Opera Project}
+	    \resitem{Link: \url{https://www.youtube.com/watch?v=mR0ZVNST6l0}}
+    }
+
+
+\ressubheadingitems{RISE}{Composer}
+    {Short musical}
+    {2019-2022}{
+    \resitem{Finalist of the Theatre Now 7th SOUND BITES Musical Competition, 2020}
+    \resitem{Workshop at NYU Tisch, NYU; April 2019}
+    \resitem{Off-Broadway debut: Kaufman Music Center, NYC; May 2022}
+    \resitem{Link: \url{https://www.youtube.com/watch?v=SVgJ4zlhP-o}}
+    }
+
+
+
+    \ressubheadingitems{What Will She Do Next?}{Composer, Co-Founder and Co-Producer}{Audio Drama (Podcast Musical)}{2020 - 2023}
+    {
+	    \resitem{NYT, Chicago Sun-Times, and Daily Herald-featured theatre-formatted audio show highlighting historical women with over 77,800 downloads.}
+	    \resitem{ Featured in the Kids \& Family category of Apple Podcasts; regular top 200.}
+	    \resitem{Endorsed by Common Sense Media, the leading organization for safe entertainment. }
+	    \resitem{ Guest stars include Matt Lucas ({\it The Great British Bake-Off, Little Britain}), and Kara\\ Lindsay ({\it Wicked}). Member of the Kids Listen organization for high-quality audio content\\ for kids.}
+	    \resitem{Select songs: \url{https://on.soundcloud.com/Mqi8jiAVANdA32b58}}
+	    \resitem{Show: \url{https://podcasts.apple.com/us/podcast/what-will-she-do-next/id1526765602}}
+}
+
+\ressubheadingitems{Ren Faire! The Musical}{Composer}{Full-length musical}{2020 - 2023}
+{
+	\resitem{Developed as part of the Theatre Now New York Writers Group}
+	\resitem{Reading July 10, 2023 (A.R.T.)}
+	\resitem{Excerpt: \url{https://on.soundcloud.com/DSscU6241BMyT35n8}}
+}
+
+\ressubheadingitems{Return to Grace}{Composer}{Full-length musical}{2019 - 2020}{
+\resitem{NYU thesis}
+\resitem{Excerpt: \url{https://on.soundcloud.com/2eLtMnjXR59yz4XD8}}
+}
+
+
+
+\ressubheadingitems{Soroka}{Composer}{Full-length musical}{2019 - 2020}{
+\resitem{Second NYU thesis}
+\resitem{Excerpt: \url{https://on.soundcloud.com/1t8aVemExYmoPjKD8}}
+}
+
+\ressubheadingitems{Dotted Line — A New Musical}{Composer, Lyricist, Bookwriter}{Full-length musical}{2017 - Present}{
+	\resitem{Excerpt: \url{https://youtu.be/uB6iOK85E2I?si=kkEOBVq-bRq6clrd}}
+}
+
+\ressubheadingitems{A Collection of Music for Piano}{Composer}{Piano Suite}{2020 - 2024}{
+	\resitem{Excerpts: \url{https://on.soundcloud.com/1VHsxgW7S7dmVCq37}}
+}
+
+\ressubheadingitems{For Christopher}{Composer}{A Suite for Piano and Bassoon}{2024 - Present}
+
+\ressubheadingitems{He \& He}{Composer, Co-Composer, Producer}{Folk-Pop album}{2017}{
+\resitem{Excerpt: \footnotesize \url{https://open.spotify.com/album/17fEVQIAy1aSmvQqqhOzoD?si=GtWiTNQvSAOvT6ZTIgDcSQ}}
+}
+
+\clearpage
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \resheading{Postdoctoral Publications}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{enumerate}
+% 
+% \item \fullcite{Scopatz2011d}
+% 
+% \end{enumerate}
+% 
+% 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{Graduate Publications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{enumerate}
+%\item \fullcite{wright2017}
+
+%\item \fullcite{Dogdibegovic2016}
+
+%\item \fullcite{Sharma2015}
+
+%\end{enumerate}
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{Undergraduate Publications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{enumerate}
+
+%\item \fullcite{Zhu2013}
+
+%\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{Presentations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODO: need to add presentations made at Universities/BNL
+%\begin{enumerate}
+
+%\item \fullcite{Dogdibegovic2016}
+
+%\item \fullcite{Wright2015}
+
+%\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{Posters}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODO: add posters at the NSLS/CFN meeting
+%\begin{enumerate}
+
+%\item \fullcite{Dogdibegovic2016a}
+
+
+%%\end{enumerate}
+
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \resheading{Teaching Experience}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \ressubheadingitems{Scientific Computing with Python and SciPy}
+%     {African Institute for Mathematical Sciences}{Lecturer}{September 2013 \& 2014} {
+%     \resitem{Instructed 50+ students in a full 30 hour course in the basics of 
+%              scientific computing in the context of the scientific Python stack.}
+%     \resitem{\href{http://software-carpentry.org/blog/2013/09/scientific-computing-at-aims.html}{Summary},  
+%              \href{https://bitbucket.org/scopatz/aims-scicomp.git}{Source Materials}
+%              }
+%     }
+% 
+%\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Outreach and Service}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ressubheadingitems{Writers Panel and Workshop}
+{BerkleeNYC}{Industry Panelist and Adviser}{2023, 2024} {
+    \resitem{Advised Berklee students on composition for theatre, and having a career in theatre writing}
+    \resitem{Together with Charlie Rosen and Rona Siddiqui, provided detailed critique to select student works}
+    }
+
+\ressubheadingitems{Theatre Now SOUND BITES Short Musical Festival}
+{Kaufman Music Center}{Adjudicator and Judge}{2023, 2024} {
+    \resitem{Adjudicated for USA's preeminent festival of short musicals}
+    \resitem{Provided emerging writers with an opportunity to have their work produced and debuted Off-Broadway}
+    }
+
+\ressubheadingitems{\#GivingTuesdaySpark}
+{GivingTuesday}{Content Producer}{2021}{
+	\resitem{Partnered with GivingTuesday through collaboration between \#GivingTuesdaySpark and \textit{What Will She Do Next?} audiodrama}
+		\resitem{Introduced a new series of monthly episodes called \textit{\#GivingTuesdaySpark: Ladies Who Lead!}
+			Each month, the podcast highlighted the incredible journey of one young woman who is
+		currently creating positive change in her community.}
+		\resitem{Co-produced with Gabrielle Mirabella.}
+    }
+
+\ressubheadingitems{Audio Engineering Society}
+{Berklee Chapter}{Officer}{2016-2017} {
+    \resitem{Organized educational events and workshops in one of the largest AES chapters in the world}
+    \resitem{Supported women in STEM/audio through outreach initiatives and panels}
+    }
+
+\ressubheadingitems{Mix Critique Panel}
+{Berklee College of Music}{Founder and Host}{2017} {
+    \resitem{Invited award-winning audio engineers and producers to critique student audio mixes and overall productions}
+    \resitem{Created a safe space for audio students to work on their curricular and extracurricular projects}
+    }
+
+\ressubheadingitems{Various Departments}
+{Berklee College of Music}{Head Audio Engineer}{2015 - 2017} {
+	\resitem{Volunteered to record and mix for the Vocal Department's ensembles} 
+    \resitem{Lead engineered and mixed large theatre orchestras in highly complex back-to-back sessions for Contemporary Writing and Theatre departments}
+    }
+
+
+    \ressubheadingitems{City Music Boston}{Berklee College of Music}
+    {Instructor}{2014}
+    {\resitem{Gave music lessons to public  middle and high school students}
+    \resitem{Berklee innitiative enabling youth from underserved communities to develop musically and academically.}}
+
+
+
+
+
+
+
+
+
+
+
+
+%\ressubheadingitems{}
+%{}{}{} {
+%    \resitem{}
+%    \resitem{}
+%    }
+
+
+%\ressubheadingitems{}
+%{}{}{} {
+%    \resitemd{}
+%    \resitem{}
+%    }
+
+
+
+
+
+\clearpage
+
+
+\resheading{Research in Composition}
+
+\ressubheadingitems{Elements of Applied Character-Driven Composition}{A Guide for Emerging Composers}{Author}{2023 - Present}
+{\resitem{Emphasizing the importance of empathy, honesty, and self-awareness in composition, encouraging composers to relate to their characters and avoid judgment or bias in their music}
+	\resitem{Dynamic Musical Objects (DMOs) are introduced as musical abstractions representing characters or elements of a story. These musical sequences can evolve, attach to characters, and exist semi-independently from the composer's inner "I".}
+	\resitem{Providing composers with tools to deepen their understanding of character-driven composition through thought experiments, music theory exercises, and philosophical insight}
+}
+
+    \resheading{Select Acting}
+    \vspace{-2pt}
+    \begin{center}\begin{tabular*}{6.6in}{l @{\extracolsep{\fill}} r}
+	{\bf Voiceover (Ukrainian)}\\
+
+	\multicolumn{2}{c}{{\it A Goofy Movie}, Lead (Max)\cftdotfill{\cftdotsep}Walt Disney Pictures}\\
+	\multicolumn{2}{c}{{\it Bad Teacher}, Supporting\cftdotfill{\cftdotsep}Columbia Pictures}\\
+	\multicolumn{2}{c}{{\it Hercules}, Supporting\cftdotfill{\cftdotsep}Walt Disney Pictures}\\
+\\
+{\bf New York Theatre}\\
+\multicolumn{2}{c}{{\it The 25th... Spelling Bee}, Chip Tolentino\cftdotfill{\cftdotsep}Peoples Improv Theatre}\\
+\multicolumn{2}{c}{{\it Pompeii Rising}, Lead (Crepitus)\cftdotfill{\cftdotsep}Judson Memorial Church}\\
+\\
+{\bf Academic Theatre}\\
+\multicolumn{2}{c}{{\it A Midsummer Night's Dream}, Flute/Thisbe\cftdotfill{\cftdotsep}Berklee College of Music}\\
+\multicolumn{2}{c}{{\it Legally Blonde}, Ensemble\cftdotfill{\cftdotsep}Berklee College of Music}\\
+\multicolumn{2}{c}{{\it Cabaret}, Ensemble\cftdotfill{\cftdotsep}Berklee College of Music}\\
+\\
+{\bf Comedy Training }\\
+
+
+\multicolumn{2}{c}{Improv 101 and 201\cftdotfill{\cftdotsep}Upright Citizen's Brigade}\\
+\multicolumn{2}{c}{Rick Crom's Comedy Class\cftdotfill{\cftdotsep}Comedy Cellar}\\
+%\multicolumn{2}{c}{\cftdotfill{\cftdotsep}\cftdotfill{\cftdotsep}}\\
+
+
+
+    \vphantom{E}
+\end{tabular*}
+\end{center}\vspace*{-13pt}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Memberships}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ressubheadingshort{The Dramatists Guild}{{\em 2020 - Present}}{Member}
+
+\ressubheadingshort{Audio Engineering Society}{{\em 2015 - Present}}{Member}
+
+\ressubheadingshort{Kids Listen}{{\em 2020 - 2023}}{Member}
+
+\ressubheadingshort{The Players}{\em 2021 - 2022}{Member}
+
+%\end{itemize}
+
+\clearpage
+
+\resheading{Industry Employment}
+
+\ressubheadingitems{Theatrical Rights Worldwide (TRW)}{New York, NYC}{Director, Music}{Feb 2023 - Present}{
+	\resitem{Content Manager of a portfolio of over 100 prime Broadway and West End titles, including {\it The Addams Family, The Prom, Spamalot, Grease, Jersey Boys, On Your Feet}}
+	\resitem{Product Developer behind titles like {\it Ernest Shackleton Loves Me, Imaginary Young@Part® Edition}}
+	\resitem{Leading a talented team of copyists, transcribers, proofreaders, orchestrators, and audio engineers, delivering high-quality projects on time and within budget}
+	\resitem{Key Liaison for roster authors and international sublicensing companies, collaborating closely with industry professionals, stakeholders, and vendors to oversee seamless title creation, development, and public release}
+	\resitem{Active Contributor to title acquisition decisions and strategic planning}
+	\resitem{Developed an easy-to-use audio transposition software in Python, reducing turnaround from 1 week to 3 minutes.}
+}
+
+\resheading{Previous Work Experience}
+
+\ressubheadingitems{
+Alicia Keys' Studio, NYU, Berklee, 54 Below, Off-Broadway}{New York, Boston}{
+Former Audio Engineer and Live Sound Systems Engineer}{2014 - 2023}{
+	\resitem{{\it Senior Audio Engineer (FOH)} at 54 Below, Tony Award-winning Broadway supper club, NYC. Responsible for all aspects of audio for 2-3 shows per day, including soundcheck (2 years)}
+	\resitem{{\it Lead Audio Technician} at NYU Gallatin, Jerry H. Labowitz Theatre for the Performing Arts (2 years)}
+	\resitem{{\it Lead Audio Systems Engineer (A1)} at the Off-Broadway-sized Gural Theatre, NYC. Designed, installed, programmed, and operated all audio systems for Theatre Now company productions. Seasonal}
+	\resitem{{\it Technical Director} at Don't Tell Mama, NYC's premier cabaret venue (2 years)}
+	\resitem{{\it AV Field Engineer} at VideoSonic Systems. Installed acoustic systems in over a hundred rooms at Columbia and New York Universities, and designed audio and video infrastructure}
+	\resitem{{\it Exhibit Installer} at RedBox Workshop. Installed interactive playscapes at Staten Island Children's Museum, Niantic Children's Museum, and New Jersey Liberty Science Center}
+	\resitem{{\it PA} at Alicia Keys’ Jungle City/Oven Studios. Provided client services for Meek Mill, Travis Scott, Lil Uzi Vert, and A Boogie wit da Hoodie, NYC. Worked overnight shifts}
+	\resitem{{\it FOH Engineer} at Shrine and Silvana, NYC. Set up audio equipment for 6 back-to-back shows daily}
+	\resitem{{\it Staff Engineer} at Berklee Studio Operations, the world's largest recording facility. (2 years)}
+	\resitem{{\it PA} at Notable Productions for Dan Cantor (Aerosmith), Boston}
+}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+   Creative
+    \begin{itemize}
+        \resitem{{\bf Expert:} Music Composition, Songwriting, Bookwriting, Arranging, Orchestration, Music Production, Stage Performance}
+        \resitem{{\bf Intermediate:} Lyric Writing, TV Scriptwriting}
+    \end{itemize}
+
+\item
+    Music Software
+    \begin{itemize}
+        \resitem{{\bf Expert:} Dorico, Sibelius, MuseScore, Logic, Pro Tools, Reason, Cubase, Nuendo, Sonar}
+         \resitem{{\bf Intermediate:} Finale }
+    \end{itemize}
+
+\item
+	General
+	\begin{itemize}
+	\resitem{Teaching, Business Administration, Arts Administration, Project Management}
+	\end{itemize}
+\item
+	    Audio Engineering
+	    \begin{itemize}
+		    \resitem{{\bf Expert:} Recording, Live Sound, Field Engineering, Mixing}
+		    \resitem{{\bf Intermediate:} Infrastructure Design, Systems Engineering, Console Programming}
+%		    \resitem{{\bf Hardware:} Neve 88RS, API: Legacy+, SSL Duality SE, Avid System 5, Avid S6L, Behringer, Yamaha}
+    \end{itemize}
+
+\item
+	Languages
+	\begin{itemize}
+		\resitem{{\bf Native:} English, Ukrainian, Russian}
+		\resitem{{\bf Intermediate:} German, Polish}
+\end{itemize}
+
+\item
+	Other
+	\begin{itemize}
+		\resitem{Python Programming, Lua script,  HTML, CSS, \LaTeX}
+\end{itemize}
+
+%\item
+%    Specialized Software
+%    \begin{itemize}
+%        \resitem{{\bf Expert:} Linux, NumPy, 
+%                 SciPy, MatPlotLib, Numba, Fit2D, pyFAI}
+%        \resitem{{\bf Intermediate:} MATLAB, MongoDB, TinyDB, SPEC, Mathematica, ORIGEN v2.2}
+%    \end{itemize}
+
+%\item
+%    Experiments
+%    \begin{itemize}
+%        \resitem{{\bf Expert:} X-ray Powder Diffraction, X-ray Total Scattering, 
+%        Atomic Pair Distribution Function Analysis, In-situ/In-operando X-ray Scattering}
+%        \resitem{{\bf Intermediate:} Electrochemistry, Nanoparticle Synthesis, Electron Microscopy}
+%    \end{itemize}
+
+\end{itemize}
+
+\end{document}
